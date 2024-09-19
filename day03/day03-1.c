@@ -13,7 +13,7 @@ int main(void)
 	}
 	else
 	{
-		printf("1 보다 큰 자연수를 입력하세요.0");
+		printf("1 보다 큰 자연수를 입력하세요.");
 	}
 
 	return 0;
