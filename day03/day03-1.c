@@ -33,9 +33,11 @@ int prime_n(int number)
 	if (k >= 2)
 	{
 		printf("소수가 아님");
+		return 0;
 	}
 	else
 	{
 		printf("소수");
+		return 1;
 	}
 }
