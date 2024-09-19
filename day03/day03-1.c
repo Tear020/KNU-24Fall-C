@@ -22,7 +22,7 @@ int main(void)
 int prime_n(int number)
 {
 	int k = 0;
-	for (int i = 1; i < number; i++)
+	for (int i = 1; i <= number; i++)
 	{
 		if (number % i == 0)
 		{
@@ -30,7 +30,7 @@ int prime_n(int number)
 		}
 	}
 	
-	if (k >= 2)
+	if (k >= 3)
 	{
 		printf("¼Ò¼ö°¡ ¾Æ´Ô");
 		return 0;
