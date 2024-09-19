@@ -5,15 +5,15 @@ int prime_n(int number);
 int main(void)
 {
 	int a;
-	printf("소수인지 확일할 양의 정수를 입력하세요 : ");
+	printf("소수인지 확인할 1보다 큰 양의 정수를 입력하세요 : ");
 	scanf_s("%d", &a);
-	if (a > 0) 
+	if (a > 1) 
 	{
 		prime_n(a);
 	}
 	else
 	{
-		printf("0 보다 큰 자연수를 입력하세요.0");
+		printf("1 보다 큰 자연수를 입력하세요.0");
 	}
 
 	return 0;
