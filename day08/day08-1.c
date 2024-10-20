@@ -7,8 +7,9 @@ int main(void)
 	char *temp;
 	temp = str;
 	
-	printf("ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
+	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä : ");
 	scanf_s("%s", str, sizeof(str));
+
 
 	
 
