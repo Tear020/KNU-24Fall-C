@@ -1,31 +1,36 @@
 #include <stdio.h>
 #include <math.h>
 
-int main(void)
+float f(float x) 
 {
-	char fx[100];
-	int a, b, c; //ax^2+bx+c
-	a = 1, b = 0, c = 1; // x^2+1
-	float start, end, n;
-	float base;
-	float y = 0;
-	printf("ÀûºĞÀÇ ½ÃÀÛ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä(fx = x^2 + 1) : ");
-	scanf_s("%f", &start);
-	printf("ÀûºĞÇÒ ³¡ °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
-	scanf_s("%f", &end);
-	printf("½ÃÇàÇÒ ÃÖ´ë ±¸°£À» ÀÔ·ÂÇÏ¼¼¿ä(2^n) : ");
-	scanf_s("%f", &n);
+    return -log10(1.0 / x) + sin(x);
+}
 
-	//base = (end - start) / n;
+float juckbun(float start, float end, int n) {
+    float h = (end - start) / n; //êµ¬ê°„ í­
+    float sum = 0.5 * (f(start) + f(end)); //ì‚¬ë‹¤ë¦¬ê¼´ ë„“ì´
 
-	for (int i = 0; i <= (int)n; i++)
-	{
-		base = (end - start) / i;
-		(start  + base) 
-	}
+    for (int i = 1; i < n; i++) {
+        sum += f(start + (i * h));
+    }
 
-	/*printf("¹Øº¯  : %d\n", (end - start)/n);
-	printf("x°¡ end ÀÏ ¶§ %f\n", (end * end * a) + (end * b) + c);
-	printf("x°¡ start ÀÏ ¶§ %f\n", (start * start * a) + (start * b) + c);*/
+    return sum * h;  // ì ë¶„ê°’ ë°˜í™˜
+}
 
+int main(void) {
+    float start, end, n;
+    printf("ì ë¶„ì˜ ì‹œì‘ ê°’ì„ ì…ë ¥í•˜ì„¸ìš”(fx = -log10(1.0 / x) + sin(x)) : ");
+    scanf_s("%f", &start);
+    printf("ì ë¶„í•  ë ê°’ì„ ì…ë ¥í•˜ì„¸ìš” : ");
+    scanf_s("%f", &end);
+    printf("ì‹œí–‰í•  ìµœëŒ€ êµ¬ê°„ì„ ì…ë ¥í•˜ì„¸ìš” (2^n) : ");
+    scanf_s("%f", &n);
+
+    for (int i = 0; i <= (int)n; i++) {
+        int gugan = (int)pow(2, i);
+        float result = juckbun(start, end, gugan);  // ì ë¶„ ê³„ì‚°
+        printf("êµ¬ê°„ %d ì ë¶„ê²°ê³¼ : %f\n", gugan, result);
+    }
+
+    return 0;
 }
